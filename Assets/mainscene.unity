@@ -2984,7 +2984,7 @@ MonoBehaviour:
   Player: {fileID: 723746097}
   Bulletcast: {fileID: 173360741}
   bullet: {fileID: 8983504164108448250, guid: 65f98cd9f31a29241be7ef8cecf04b7f, type: 3}
-  Ammocount: 100
+  Ammocount: 200
   ammoText: {fileID: 1041525994}
 --- !u!1 &731268225
 GameObject:
