@@ -6,17 +6,18 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
     public float moveSpeed = 30;
     public GameObject Camera;
-    public PlayerController Player;
     public GameObject Bulletcast;
     public GameObject bullet;
     public int Ammocount=10;
     public Text ammoText;
     private bool Ammo = true;
-
+    public Transform Camerareference;
+    public GameObject Playerreference;
+    public GameObject Cubereference;
     void Start ()
     {
-       
-        
+
+        //Camerareference = Camera.transform;
 	}
 
     void Update()
@@ -24,29 +25,36 @@ public class PlayerController : MonoBehaviour {
         UpdateAmmoText();
         if (Input.GetKey(KeyCode.W))
         {
-            Player.transform.Translate(-Vector3.forward * (moveSpeed/3) * Time.deltaTime);
+            gameObject.transform.Translate(-Vector3.forward * (moveSpeed/3) * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            Player.transform.Translate(Vector3.forward * (moveSpeed/3) * Time.deltaTime);
+            gameObject.transform.Translate(Vector3.forward * (moveSpeed / 3) * Time.deltaTime);
+            // Player.transform.Translate(Vector3.forward * (moveSpeed/3) * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            Player.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-           // Camera.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+           // Camerareference.transform.localPosition = Camera.transform.localPosition;
+           gameObject.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+            Playerreference.transform.localRotation = Quaternion.Euler(0, 180, 0);
+           // Camera.transform.localRotation = Quaternion.Euler(0, -180, 0);
+           // Camera.transform.localPosition = Camerareference.transform.localPosition;
+            //Camerareference=Camera.transform;
+            // Camera.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            Player.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-           // Camera.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+           gameObject.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+            Playerreference.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            // Camera.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Player.transform.Translate(Vector3.up * moveSpeed * 2 * Time.deltaTime);
+            gameObject.transform.Translate(Vector3.up * moveSpeed * 2 * Time.deltaTime);
         }
 
         if ((Input.GetKeyDown(KeyCode.X)) && (Ammo == true) && (Ammocount !=0))
