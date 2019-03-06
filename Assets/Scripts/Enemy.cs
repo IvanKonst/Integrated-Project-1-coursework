@@ -7,17 +7,23 @@ public class Enemy : MonoBehaviour, IEnemy
 {
     public float maxHealth;
     public float currentHealth;
+    public float moveSpeed = 30;
+    public GameObject Bulletcast;
+    public GameObject bullet;
+    public int heading;
+
 
     // Use this for initialization
     void Start()
     {
         currentHealth = maxHealth;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+       // gameObject.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
     }
 
     public void TakeDamage(int amount)

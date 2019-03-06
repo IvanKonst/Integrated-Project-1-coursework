@@ -65,6 +65,14 @@ public class PlayerController : MonoBehaviour {
             this.Ammo = true;
             Ammocount--;
         }
+        if ((Input.GetKeyDown(KeyCode.Z)) && (Ammo == true) && (Ammocount != 0))
+        {
+            this.Ammo = false;
+            GameObject bulletInstance = Instantiate(bullet, Bulletcast.transform.position, Bulletcast.transform.rotation);
+            bulletInstance.GetComponent<BulletScript>().Direction = Vector3.right;
+            this.Ammo = true;
+            Ammocount--;
+        }
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
         {
@@ -77,6 +85,6 @@ public class PlayerController : MonoBehaviour {
     }
     public void UpdateAmmoText()
     {
-        ammoText.text = Ammocount + "";
+        ammoText.text = "Bullets: " + Ammocount;
     }
 }
