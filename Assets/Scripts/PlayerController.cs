@@ -61,15 +61,7 @@ public class PlayerController : MonoBehaviour {
         {
             this.Ammo = false;
             GameObject bulletInstance = Instantiate(bullet, Bulletcast.transform.position, Bulletcast.transform.rotation);
-            bulletInstance.GetComponent<BulletScript>().Direction = Vector3.left;
-            this.Ammo = true;
-            Ammocount--;
-        }
-        if ((Input.GetKeyDown(KeyCode.Z)) && (Ammo == true) && (Ammocount != 0))
-        {
-            this.Ammo = false;
-            GameObject bulletInstance = Instantiate(bullet, Bulletcast.transform.position, Bulletcast.transform.rotation);
-            bulletInstance.GetComponent<BulletScript>().Direction = Vector3.right;
+            bulletInstance.GetComponent<BulletScript>().Direction = -Bulletcast.transform.right;
             this.Ammo = true;
             Ammocount--;
         }
