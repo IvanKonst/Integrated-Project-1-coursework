@@ -40,7 +40,7 @@ public class MenuManagement : MonoBehaviour
     }
     public void Restart()
     {
-        SceneManager.LoadScene("mainscene");
+        SceneManager.LoadScene("mainscenev2");
         Debug.Log("restart");
         Time.timeScale = 1;
 
