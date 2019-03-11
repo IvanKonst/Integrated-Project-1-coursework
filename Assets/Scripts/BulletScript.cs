@@ -17,7 +17,6 @@ public class BulletScript : MonoBehaviour {
         Damage = 4;
         spawnPosition = transform.position;
         GetComponent<Rigidbody>().AddForce(Direction * 2000f);
-      //  UpdateAmmoText();
     }
 
     void Update()

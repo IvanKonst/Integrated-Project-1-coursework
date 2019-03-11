@@ -36,11 +36,11 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.A))
         {
-           // Camerareference.transform.localPosition = Camera.transform.localPosition;
-           gameObject.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+            // Camerareference.transform.localPosition = Camera.transform.localPosition;
+            gameObject.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
             Playerreference.transform.localRotation = Quaternion.Euler(0, 180, 0);
-           // Camera.transform.localRotation = Quaternion.Euler(0, -180, 0);
-           // Camera.transform.localPosition = Camerareference.transform.localPosition;
+            // Camera.transform.localRotation = Quaternion.Euler(0, -180, 0);
+            // Camera.transform.localPosition = Camerareference.transform.localPosition;
             //Camerareference=Camera.transform;
             // Camera.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
         }

@@ -8,9 +8,6 @@ public class Enemy : MonoBehaviour, IEnemy
     public float maxHealth;
     public float currentHealth;
     public float moveSpeed = 30;
-    public GameObject Bulletcast;
-    public GameObject bullet;
-    public int heading;
 
 
     // Use this for initialization
