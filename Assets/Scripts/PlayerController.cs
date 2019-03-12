@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour {
     public Transform Camerareference;
     public GameObject Playerreference;
     public GameObject Cubereference;
+    public Animator Anime;
+
     void Start ()
     {
 
@@ -50,6 +52,7 @@ public class PlayerController : MonoBehaviour {
            gameObject.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
             Playerreference.transform.localRotation = Quaternion.Euler(0, 0, 0);
             // Camera.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+            
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -74,6 +77,12 @@ public class PlayerController : MonoBehaviour {
         {
             Camera.transform.Translate(Vector3.back * (moveSpeed*3) * Time.deltaTime);
         }
+
+    }
+
+    private void Awake()
+    {
+        Anime = GetComponent<Animator>();
     }
     public void UpdateAmmoText()
     {
