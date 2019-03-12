@@ -14,11 +14,11 @@ public class PlayerController : MonoBehaviour {
     public Transform Camerareference;
     public GameObject Playerreference;
     public GameObject Cubereference;
-    public Animator Anime;
+    private Animator anim;
 
     void Start ()
     {
-
+        anim = gameObject.GetComponentInChildren<Animator>();
         //Camerareference = Camera.transform;
 	}
 
@@ -45,14 +45,25 @@ public class PlayerController : MonoBehaviour {
             // Camera.transform.localPosition = Camerareference.transform.localPosition;
             //Camerareference=Camera.transform;
             // Camera.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+            anim.SetInteger("Moveback", 1);
         }
+        else
+        {
+            anim.SetInteger("Moveback", 0);
 
+        }
+       
         if (Input.GetKey(KeyCode.D))
         {
            gameObject.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
             Playerreference.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            anim.SetInteger("AnimPar", 1);
             // Camera.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
             
+        }
+        else
+        {
+            anim.SetInteger("AnimPar", 0);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -82,7 +93,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Awake()
     {
-        Anime = GetComponent<Animator>();
+        
     }
     public void UpdateAmmoText()
     {
