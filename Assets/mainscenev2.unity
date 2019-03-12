@@ -3732,7 +3732,7 @@ GameObject:
   - component: {fileID: 723746097}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3773,7 +3773,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723746091}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3822,7 +3822,7 @@ Transform:
   m_LocalPosition: {x: 4.6000013, y: 2.3189964, z: -0.000022888184}
   m_LocalScale: {x: 1, y: 2.898014, z: 1}
   m_Children:
-  - {fileID: 1638514398}
+  - {fileID: 1123353381}
   - {fileID: 534669905}
   - {fileID: 1063406236}
   m_Father: {fileID: 0}
@@ -4649,6 +4649,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89b170bf263d8d242a3c6a43d5171fad, type: 3}
+--- !u!1 &859916945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1123353380}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 859916946}
+  - component: {fileID: 1638514399}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &859916946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1123353380}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859916945}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1123353381}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &863840882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5933,6 +5964,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64f7f3fd28b808842a4dd52c836cb991, type: 3}
+--- !u!4 &1123353381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1123353380}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128922775}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1638514398}
+  - {fileID: 859916946}
+  m_Father: {fileID: 723746096}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1125132203
 GameObject:
   m_ObjectHideFlags: 0
@@ -6062,6 +6109,22 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 20
   moveSpeed: 30
+--- !u!1 &1128922775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1123353380}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1123353381}
+  m_Layer: 0
+  m_Name: SpaceRebel_animations (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1149078146
 GameObject:
   m_ObjectHideFlags: 0
@@ -6131,6 +6194,22 @@ Transform:
   m_Father: {fileID: 20345079}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1160900599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1123353380}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1638514398}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1173602490
 GameObject:
   m_ObjectHideFlags: 0
@@ -7465,18 +7544,42 @@ CapsuleCollider:
   m_Height: 9.5
   m_Direction: 1
   m_Center: {x: 0, y: -1.3, z: 0}
---- !u!4 &1638514398 stripped
+--- !u!4 &1638514398
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 400108, guid: 64f7f3fd28b808842a4dd52c836cb991,
     type: 3}
   m_PrefabInstance: {fileID: 1123353380}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1638514399 stripped
+  m_GameObject: {fileID: 1160900599}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1890636185}
+  m_Father: {fileID: 1123353381}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1638514399
 Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 64f7f3fd28b808842a4dd52c836cb991,
     type: 3}
   m_PrefabInstance: {fileID: 1123353380}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859916945}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1641174643
 GameObject:
   m_ObjectHideFlags: 0
@@ -8778,8 +8881,9 @@ MonoBehaviour:
   PlayerController: {fileID: 723746091}
   Enemymovespeed: 10
   Bulletcast: {fileID: 749997866}
-  bullet: {fileID: 1973807917}
-  Direction: {x: 0, y: 0, z: 0}
+  bullet: {fileID: 1973807912}
+  timebetweenshots: 4
+  starttime: 4
 --- !u!54 &1867517229
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9016,7 +9120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 1638514398}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1890636186
 BoxCollider:
@@ -9331,6 +9435,7 @@ GameObject:
   - component: {fileID: 1973807914}
   - component: {fileID: 1973807917}
   - component: {fileID: 1973807913}
+  - component: {fileID: 1973807918}
   m_Layer: 0
   m_Name: Enemybullet
   m_TagString: Untagged
@@ -9427,6 +9532,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1973807918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973807912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f3bfaff560a2d48a59cdaaf2ebf2dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!1001 &1992056397
 PrefabInstance:
   m_ObjectHideFlags: 0

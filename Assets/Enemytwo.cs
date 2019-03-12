@@ -5,16 +5,17 @@ using UnityEngine;
 public class Enemytwo : MonoBehaviour
 {
     public GameObject PlayerController;
-    private float moveSpeed = 30;
     public float Enemymovespeed=10;
     private float range=30;
     public GameObject Bulletcast;
-    public Rigidbody bullet;
-    public Vector3 Direction;
+    public GameObject bullet;
+    public float timebetweenshots=10f;
+    public float starttime=10f;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        timebetweenshots = starttime;
     }
 
     // Update is called once per frame
@@ -22,14 +23,16 @@ public class Enemytwo : MonoBehaviour
     {
         if (Vector3.Distance(gameObject.transform.localPosition, PlayerController.transform.localPosition)<=range)
         {
-           // gameObject.transform.Translate(Vector3.right * Enemymovespeed * Time.deltaTime);
-
+           transform.position = Vector3.MoveTowards(transform.position, PlayerController.transform.position, Enemymovespeed * Time.deltaTime);
         }
-        
-        if (Input.GetKeyDown(KeyCode.U))
+        if(timebetweenshots <=0)
         {
-            Rigidbody bulletInstance = Instantiate(bullet, Bulletcast.transform.position, Bulletcast.transform.rotation);
-            bulletInstance.transform.Translate(Vector3.right * Time.deltaTime);
+            Instantiate(bullet, transform.position, transform.rotation);
+            timebetweenshots = starttime;
+        }
+        else
+        {
+            timebetweenshots -= Time.deltaTime;
         }
     }
 }
