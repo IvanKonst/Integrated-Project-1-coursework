@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour {
     public GameObject Playerreference;
     public GameObject Cubereference;
     private Animator anim;
+    private int lanepositioncheck;
+    private float laneposition1= -3.08f;
+    private float laneposition2 = -0.22f;
+    private float laneposition3 = 2.74f;
+    private float z;
 
     void Start ()
     {
@@ -27,7 +32,21 @@ public class PlayerController : MonoBehaviour {
         UpdateAmmoText();
         if (Input.GetKey(KeyCode.W))
         {
+          /*  if (lanepositioncheck < laneposition3) lanepositioncheck++;
+            switch (lanepositioncheck)
+            {
+                case 1:
+                    z = laneposition1;
+                    break;
+                case 2:
+                    z = laneposition2;
+                    break;
+                case 3:
+                    z = laneposition3;
+                    break;
+            }*/
             gameObject.transform.Translate(-Vector3.forward * (moveSpeed/3) * Time.deltaTime);
+          //  gameObject.transform.SetPositionAndRotation(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, z), gameObject.transform.rotation);
         }
 
         if (Input.GetKey(KeyCode.S))
