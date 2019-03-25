@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 474}
   m_MaxSize: {x: 14000, y: 14024}
   vertical: 0
-  controlID: 92
+  controlID: 56
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 474}
   m_MaxSize: {x: 10000, y: 14024}
   vertical: 1
-  controlID: 93
+  controlID: 57
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 224}
   m_MaxSize: {x: 8004, y: 4024}
   vertical: 0
-  controlID: 94
+  controlID: 58
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -382,9 +382,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 32}
-      m_SelectedIDs: 26fbffff
-      m_LastClickedID: -1242
-      m_ExpandedIDs: d4fbffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: d4fbffff5e270000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -470,9 +470,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.055971023, y: -0.93607587, z: 0.3003648, w: -0.17438899}
+    m_Target: {x: -0.05597099, y: -0.9360753, z: 0.3003646, w: -0.17438889}
     speed: 2
-    m_Value: {x: -0.05597099, y: -0.9360753, z: 0.3003646, w: -0.17438889}
+    m_Value: {x: -0.05597098, y: -0.9360752, z: 0.30036458, w: -0.17438887}
   m_Size:
     m_Target: 8.689788
     speed: 2
@@ -616,19 +616,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Material
+    - Assets/SampleScenes/Materials
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Material
+  - Assets/SampleScenes/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\mchar\OneDrive\Documents\GitHub\Proto-IP1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 61}
-    m_SelectedIDs: d4150000
-    m_LastClickedID: 5588
+    scrollPos: {x: 0, y: 131}
+    m_SelectedIDs: 4a0b0000
+    m_LastClickedID: 2890
     m_ExpandedIDs: 00000000440b0000ca0b00008a1400002c160000241a0000681b0000101d0000181d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
