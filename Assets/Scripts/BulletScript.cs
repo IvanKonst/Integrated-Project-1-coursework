@@ -13,7 +13,7 @@ public class BulletScript : MonoBehaviour {
 
     void Start()
     {
-        Range = 20f;
+        Range = 100f;
         Damage = 4;
         spawnPosition = transform.position;
         GetComponent<Rigidbody>().AddForce(Direction * 2000f);

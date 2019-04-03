@@ -4,66 +4,66 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
-    public float moveSpeed = 30;
+    public float moveSpeed = 80;
     public GameObject Camera;
+    private Transform Chargingports;
     public GameObject Bulletcast;
     public GameObject bullet;
-    public int Ammocount=10;
+    public int Ammocount = 100;
     public Text ammoText;
     private bool Ammo = true;
+    private bool Isgrounded = true;
     public Transform Camerareference;
     public GameObject Playerreference;
     public GameObject Cubereference;
     private Animator anim;
-    private int lanepositioncheck;
-    private float laneposition1= -3.08f;
-    private float laneposition2 = -0.22f;
-    private float laneposition3 = 2.74f;
-    private float z;
+    private float range = 3;
+    private float laneposition1= 0f;
+    private float laneposition2 = 2.5f;
+    private float laneposition3 = 5f;
 
     void Start ()
     {
         anim = gameObject.GetComponentInChildren<Animator>();
-        //Camerareference = Camera.transform;
 	}
 
     void Update()
     {
+        Chargingports = GameObject.FindGameObjectWithTag("Port").transform;
         UpdateAmmoText();
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-          /*  if (lanepositioncheck < laneposition3) lanepositioncheck++;
-            switch (lanepositioncheck)
+            if (gameObject.transform.position.z > 4f)
             {
-                case 1:
-                    z = laneposition1;
-                    break;
-                case 2:
-                    z = laneposition2;
-                    break;
-                case 3:
-                    z = laneposition3;
-                    break;
-            }*/
-            gameObject.transform.Translate(-Vector3.forward * (moveSpeed/3) * Time.deltaTime);
-          //  gameObject.transform.SetPositionAndRotation(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, z), gameObject.transform.rotation);
+                Vector3 vecz = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, laneposition2);
+                gameObject.transform.position = vecz;
+            }
+            else if (gameObject.transform.position.z > 1f)
+            {
+                Vector3 vecz = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, laneposition1);
+                gameObject.transform.position = vecz;
+            }
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            gameObject.transform.Translate(Vector3.forward * (moveSpeed / 3) * Time.deltaTime);
-            // Player.transform.Translate(Vector3.forward * (moveSpeed/3) * Time.deltaTime);
+            if (gameObject.transform.position.z < 1f)
+            {
+                Vector3 vecz = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, laneposition2);
+                gameObject.transform.position = vecz;
+            }
+            else if (gameObject.transform.position.z < 4f)
+            {
+                Vector3 vecz = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, laneposition3);
+                gameObject.transform.position = vecz;
+            }
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            // Camerareference.transform.localPosition = Camera.transform.localPosition;
-            gameObject.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+            Vector3 vec = new Vector3(gameObject.transform.position.x + 1f, gameObject.transform.position.y, gameObject.transform.position.z);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, vec , moveSpeed * Time.deltaTime);
             Playerreference.transform.localRotation = Quaternion.Euler(0, 180, 0);
-            // Camera.transform.localRotation = Quaternion.Euler(0, -180, 0);
-            // Camera.transform.localPosition = Camerareference.transform.localPosition;
-            //Camerareference=Camera.transform;
-            // Camera.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
             anim.SetInteger("Moveback", 1);
         }
         else
@@ -74,10 +74,10 @@ public class PlayerController : MonoBehaviour {
        
         if (Input.GetKey(KeyCode.D))
         {
-           gameObject.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+            Vector3 vec = new Vector3(gameObject.transform.position.x - 1f, gameObject.transform.position.y, gameObject.transform.position.z);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, vec, moveSpeed * Time.deltaTime);
             Playerreference.transform.localRotation = Quaternion.Euler(0, 0, 0);
             anim.SetInteger("AnimPar", 1);
-            // Camera.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
             
         }
         else
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour {
             anim.SetInteger("AnimPar", 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if ((Input.GetKeyDown(KeyCode.Space)) && (Isgrounded == true))
         {
             gameObject.transform.Translate(Vector3.up * moveSpeed * 2 * Time.deltaTime);
         }
@@ -98,22 +98,44 @@ public class PlayerController : MonoBehaviour {
             this.Ammo = true;
             Ammocount--;
         }
+        
+        if (Vector3.Distance(gameObject.transform.localPosition, Chargingports.transform.localPosition) <= range)
+        {
+            Ammocount = 100;
+        }
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f) 
         {
             Camera.transform.Translate(Vector3.forward * (moveSpeed*3) * Time.deltaTime);
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) 
         {
             Camera.transform.Translate(Vector3.back * (moveSpeed*3) * Time.deltaTime);
         }
 
     }
 
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Ground")
+        {
+            Isgrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.tag == "Ground")
+        {
+            Isgrounded = false;
+        }
+    }
+
     private void Awake()
     {
         
     }
+
     public void UpdateAmmoText()
     {
         ammoText.text = "Bullets: " + Ammocount;
