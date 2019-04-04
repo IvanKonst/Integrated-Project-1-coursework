@@ -39,6 +39,7 @@ public class Health : MonoBehaviour, IEnemy
 
     void Die()
     {
+
         SceneManager.LoadScene("mainscenev2");
         Time.timeScale = 1;
     }

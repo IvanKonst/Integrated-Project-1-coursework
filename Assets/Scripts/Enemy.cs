@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour, IEnemy
     public static GameObject[] Enemies;
     public int numSpawned = 0;
     public int enemycount;
-
+    private Animator anim;
 
 
     // Use this for initialization
@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour, IEnemy
     {
         // gameObject.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
         PlayerController = GameObject.FindGameObjectWithTag("Player").transform;
+
     }
 
     public void TakeDamage(int amount)
