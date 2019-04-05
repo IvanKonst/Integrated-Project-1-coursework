@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour, IPorts
+{
     public float moveSpeed = 80;
     public GameObject Camera;
     private Transform Chargingports;
@@ -17,7 +19,6 @@ public class PlayerController : MonoBehaviour {
     public GameObject Playerreference;
     public GameObject Cubereference;
     private Animator anim;
-    private float range = 3;
     private float laneposition1= 0f;
     private float laneposition2 = 2.5f;
     private float laneposition3 = 5f;
@@ -29,7 +30,6 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        Chargingports = GameObject.FindGameObjectWithTag("Port").transform;
         UpdateAmmoText();
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -99,10 +99,6 @@ public class PlayerController : MonoBehaviour {
             Ammocount--;
         }
         
-        if (Vector3.Distance(gameObject.transform.localPosition, Chargingports.transform.localPosition) <= range)
-        {
-            Ammocount = 100;
-        }
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0f) 
         {
@@ -139,5 +135,10 @@ public class PlayerController : MonoBehaviour {
     public void UpdateAmmoText()
     {
         ammoText.text = "Bullets: " + Ammocount;
+    }
+
+    public void Ammoadd(int amount)
+    {
+        Ammocount = amount;
     }
 }

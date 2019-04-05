@@ -24,11 +24,6 @@ public class Health : MonoBehaviour, IEnemy
         UpdateHealth();
     }
 
-    public void TakeDamage()
-    {
-
-    }
-
     public void TakeDamage(int amount)
     {
         Healtha -= amount;
