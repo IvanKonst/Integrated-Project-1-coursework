@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3222029704652875365}
   - component: {fileID: 3222029704652875364}
   - component: {fileID: 3222029704652875367}
+  - component: {fileID: 4150614214173423554}
   - component: {fileID: 3222029704652875366}
   - component: {fileID: 3222029704652875384}
   m_Layer: 0
@@ -113,7 +114,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &3222029704652875366
+--- !u!114 &4150614214173423554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +122,28 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3222029704652875361}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a660fb86380e5b4993005b7d10b3ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemymovespeed: 10
+  Bulletcast: {fileID: 3222029705741034592}
+  bullet: {fileID: 2325360618024380599, guid: 22233dc2f9cdb56418042ee419b2d895, type: 3}
+  timebetweenshots: 1.5
+  starttime: 1.5
+  maxHealth: 15
+  currentHealth: 15
+  moveSpeed: 30
+  numSpawned: 0
+  enemycount: 0
+--- !u!114 &3222029704652875366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222029704652875361}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f49628d4e5addb4498520d2c5e3c25cd, type: 3}
   m_Name: 
@@ -137,7 +160,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3222029704652875361}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afd603d89d3cd4a4cb7cba9c9220bc2b, type: 3}
   m_Name: 

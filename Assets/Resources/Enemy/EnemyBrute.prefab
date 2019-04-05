@@ -104,8 +104,7 @@ GameObject:
   - component: {fileID: 5834619401210008635}
   - component: {fileID: 5834619401210008636}
   - component: {fileID: 5834619401210008637}
-  - component: {fileID: 5834619401210008638}
-  - component: {fileID: 5834619401210008639}
+  - component: {fileID: 4758084340028754422}
   m_Layer: 0
   m_Name: EnemyBrute
   m_TagString: Enemy
@@ -204,7 +203,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &5834619401210008638
+--- !u!114 &4758084340028754422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,29 +212,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5834619401210008608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f49628d4e5addb4498520d2c5e3c25cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 19cde65647b55e4418c11769c0a919d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemymovespeed: 10
+  Enemymovespeed: 6
   Bulletcast: {fileID: 5834619402456238430}
   bullet: {fileID: 2325360618024380599, guid: 22233dc2f9cdb56418042ee419b2d895, type: 3}
-  timebetweenshots: 4
-  starttime: 4
---- !u!114 &5834619401210008639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5834619401210008608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd603d89d3cd4a4cb7cba9c9220bc2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 10
-  moveSpeed: 20
+  timebetweenshots: 1
+  starttime: 1
+  maxHealth: 20
+  currentHealth: 20
+  moveSpeed: 30
   numSpawned: 0
   enemycount: 0
 --- !u!1 &5834619402456238430
