@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\RechargePort.cs" />
+    <Compile Include="Assets\Scripts\Spikes.cs" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>F:/GIThUB/Proto-IP1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
