@@ -96,7 +96,7 @@ public class BruteEnemy : MonoBehaviour, IEnemy
         Destroy(gameObject);
         int healamount = Random.Range(15, 25);
         PlayerController.transform.GetComponent<IHeal>().Healonkill(healamount);
-        if (enemycount < 20)
+        if (enemycount < 3)
         {
             float[] lanepos = new float[] { 0f, 2.5f, 5f };
             int whichlane = Random.Range(0, lanepos.Length);

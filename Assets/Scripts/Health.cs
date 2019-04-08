@@ -8,12 +8,15 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour, IEnemy, IHeal
 {
     public Text Healthbar;
+    public Text Kills;
     int Healtha = 100;
+    int Killsa = 0;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
 
@@ -22,6 +25,7 @@ public class Health : MonoBehaviour, IEnemy, IHeal
     void Update()
     {
         UpdateHealth();
+        UpdateKills();
     }
 
     public void TakeDamage(int amount)
@@ -44,12 +48,31 @@ public class Health : MonoBehaviour, IEnemy, IHeal
         Healthbar.text = "Health: " + Healtha;
     }
 
+    public void UpdateKills()
+    {
+        Kills.text = "Kills: " + Killsa;
+    }
+
     public void Healonkill(int amount)
     {
+        Killsa += 1;
         int randValue = Random.Range(0, 100);
         if (randValue < 15)
         {
             Healtha += amount;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.transform.tag == "Endwall")
+        {
+            if (Killsa >= 20)
+            {
+                Debug.Log("asd");
+                SceneManager.LoadScene("end");
+            }
         }
     }
 }

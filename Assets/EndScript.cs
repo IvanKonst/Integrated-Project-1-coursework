@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndScript : MonoBehaviour
+public class EndScript : MonoBehaviour 
 {
     public GameObject playerreference;
     // Start is called before the first frame update
@@ -17,8 +17,10 @@ public class EndScript : MonoBehaviour
     {
         
     }
+
     private void OnCollisionEnter(Collision collision)
     {
+
         if (collision.transform.tag=="Player")
         {
             Debug.Log("asd");

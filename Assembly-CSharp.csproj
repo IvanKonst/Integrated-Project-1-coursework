@@ -77,9 +77,9 @@
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyBulletScript.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-    <Compile Include="Assets\Scripts\Enemytwo.cs" />
     <Compile Include="Assets\Scripts\GunmanEnemy.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IEndcondition.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IEnemy.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IHeal.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IPorts.cs" />
