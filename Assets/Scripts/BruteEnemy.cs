@@ -85,7 +85,10 @@ public class BruteEnemy : MonoBehaviour, IEnemy
     {
         currentHealth -= amount;
         if (currentHealth <= 0)
-            Die();
+        {
+            anim.SetFloat("Dead", 1);
+            Invoke("Die", 1.10f);
+        }
     }
 
     void Die()
