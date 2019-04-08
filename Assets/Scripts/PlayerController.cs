@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour, IPorts
     private Transform Chargingports;
     public GameObject Bulletcast;
     public GameObject bullet;
-    public int Ammocount = 100;
+    public int Ammocount = 32;
     public Text ammoText;
     private bool Ammo = true;
     private bool Isgrounded = true;

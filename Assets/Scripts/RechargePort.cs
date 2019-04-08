@@ -7,7 +7,7 @@ public class RechargePort : MonoBehaviour
 {
     private Transform PlayerController;
     private float range = 4;
-    private int Ammo = 100;
+    private int Ammo = 32;
 
     void Start()
     {

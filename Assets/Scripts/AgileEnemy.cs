@@ -94,6 +94,8 @@ public class AgileEnemy : MonoBehaviour, IEnemy
     void Die()
     {
         Destroy(gameObject);
+        int healamount = Random.Range(15, 25);
+        PlayerController.transform.GetComponent<IHeal>().Healonkill(healamount);
         if (enemycount < 20)
         {
             float[] lanepos = new float[] { 0f, 2.5f, 5f };
