@@ -35,13 +35,11 @@ public class MenuManagement : MonoBehaviour
     }
     public void Escape()
     {
-        Application.Quit();
-        Debug.Log("quit");
+        SceneManager.LoadScene("MainMenu");
     }
     public void Restart()
     {
         SceneManager.LoadScene("mainscenev2");
-        Debug.Log("restart");
         Time.timeScale = 1;
 
     }
