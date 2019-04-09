@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour, IPorts
 
     public void UpdateAmmoText()
     {
-        ammoText.text = "Bullets: " + Ammocount;
+        ammoText.text = Ammocount + " / 32";
     }
 
     public void Ammoadd(int amount)

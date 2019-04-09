@@ -60,6 +60,10 @@ public class Health : MonoBehaviour, IEnemy, IHeal
         if (randValue < 15)
         {
             Healtha += amount;
+            if (Healtha >= 100)
+            {
+                Healtha = 100;
+            }
         }
     }
 
